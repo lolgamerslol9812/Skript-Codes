@@ -1,0 +1,14 @@
+options:
+	p: &8[&eStaffChat&]
+  
+command /staffchat [<text>]:
+	aliases: /sc
+	permission: staff.chat
+	permission message: "{@p}: &cDu hast keine Rechte!"
+	trigger:
+		if arg 1 is not set:
+			send "&c/staffchat <message>" to player
+		if arg 1 is set:
+			loop all players:
+				if loop-player has permission "staff.chat":
+					send "{@p}: &e%player's display name%&7: %arg-1%" to loop-player
