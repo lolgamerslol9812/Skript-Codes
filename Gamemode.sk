@@ -1,0 +1,24 @@
+options:
+	p: &7[&cGamemode&7]
+	
+command /gm [<gamemode>]:
+	permission: op
+	permission message: "&cDu hast keine rechte!"
+	trigger:
+		if arg 1 is not set:
+			send "&c/gm <Gamemode>" to player
+		if arg 1 is set to 1:
+			set gamemode of player to creative
+			message "{@p}: &7Dein Spielmodus ist jetzt &6Creative"
+			
+		if arg 1 is set to 2:
+			set gamemode of player to adventure
+			message "{@p}: &7Dein Spielmodus ist jetzt &6Abenteuer"
+			
+		if arg 1 is set to 0:
+			set gamemode of player to survival
+			message "{@p}: &7Dein Spielmodus ist jetzt &6Überleben"
+			
+		if arg 1 is set to 3:
+			set gamemode of player to spectator
+			message "{@p}: &7Dein Spielmodus ist jetzt &6Zuschauer"
