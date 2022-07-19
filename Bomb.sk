@@ -1,6 +1,8 @@
 command /bomb [<player>]:
 	permission: op
-	permission message: "§cDu hast keine Recht!"
+	permission message: "&cDu hast keine Recht!"
 	trigger:
+		if arg 1 is not set:
+		send "&c/bomb <player>" to player
 		if arg 1 is set:
 			spawn tnt at arg 1
